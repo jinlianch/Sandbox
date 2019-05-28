@@ -1,0 +1,11 @@
+/* Lexical Part */
+
+id : 'a'-'z' {'a'-'z'} ;
+
+!whitespace : ' ' | '\t' | '\n' | '\r' ;
+
+/* Syntax Part */
+
+<< import "Sandbox/go/gocc_test/foo/ast" >>
+
+Hello:  "hello" id << ast.NewWorld($1) >> ;
