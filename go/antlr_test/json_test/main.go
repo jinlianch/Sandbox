@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"Sandbox/antlr_test/json_parser"
+	"Sandbox/go/antlr_test/json_test/json_parser"
 	"os"
 	"fmt"
 )
