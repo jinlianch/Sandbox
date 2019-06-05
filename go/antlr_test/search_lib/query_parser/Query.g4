@@ -1,29 +1,42 @@
 grammar Query;
 
-query: query_item;
+query: queryCriterias;
 
-query_item:
-	query_item AND query_item	# AndQueryItem
-	| query_item OR query_item	# OrQueryItem
-	| NOT query_item			# NotQueryItem
-	| '(' query_item ')'		# BracketQueryItem
-	| single_query_item			# SingleQueryItem;
+/*
+ queryCriterias: andQueryCriteria | orQueryCriteria | bracketQueryCriteria | notQueryCriteria |
+ queryCriteria;
+ */
+queryCriterias:
+	queryCriterias AND queryCriterias	# AndQueryCriterias
+	| queryCriterias OR queryCriterias	# OrQueryCriterias
+	| NOT queryCriterias				# NotQueryCriterias
+	| '(' queryCriterias ')'			# BracketQueryCriterias
+	| queryCriteria						# SingleQueryCriteria;
 
-single_query_item:
-	ID ':' STRING		# HeaderQueryItem
-	| HEADER ':' STRING	# KeyQueryItem
-	| STRING			# ValueQueryItem;
+/*
+ andQueryCriteria: queryCriterias AND queryCriterias; orQueryCriteria: queryCriterias OR
+ queryCriterias; bracketQueryCriteria: '(' queryCriterias ')'; notQueryCriteria: NOT queryCriterias;
+ */
+queryCriteria: keyCriteria | headerCriteria | valueCriteria;
 
-AND: 'and' | '&' | ' ';
+/*
+ ID ':' valueCriteria | HEADER ':' valueCriteria | value_item;
+ */
+
+keyCriteria: KEY ':' valueCriteria;
+headerCriteria: HEADER ':' valueCriteria;
+valueCriteria: KEY | QUOTE_STRING | NOQUOTE_STRING;
+
 OR: 'or' | '|';
 NOT: 'not' | '-';
-// LPAR: '('; RPAR: ')'; COLON: ':';
-ID: [a-zA-Z_\-][a-zA-Z_\-0-9]*;
-VALUE: '~["]' (ESC | ~["\\])* '"';
-STRING: '"' (ESC | ~["\\])* '"';
-HEADER: '#' | 'header[' ID ']';
+AND: 'and' | '&';
+// KEY: [a-zA-Z_\-][a-zA-Z_\-0-9]*;
+KEY: ~[ :"\t\n\r]+;
+HEADER: '#' KEY | 'header[' KEY ']';
+NOQUOTE_STRING: ~[ "\t\n\r]+;
+QUOTE_STRING: '"' ( ESC | .)*? '"';
 fragment ESC: '\\' (["\\/bfnrt] | UNICODE);
 fragment UNICODE: 'u' HEX HEX HEX HEX;
 fragment HEX: [0-9a-fA-F];
 
-WS: [ \t\n\r]+;
+WS: [ \t\n\r]+ -> skip;

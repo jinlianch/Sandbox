@@ -11,34 +11,38 @@ func (v *BaseQueryVisitor) VisitQuery(ctx *QueryContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitBracketQueryItem(ctx *BracketQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitAndQueryCriterias(ctx *AndQueryCriteriasContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitSingleQueryItem(ctx *SingleQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitNotQueryCriterias(ctx *NotQueryCriteriasContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitNotQueryItem(ctx *NotQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitSingleQueryCriteria(ctx *SingleQueryCriteriaContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitOrQueryItem(ctx *OrQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitBracketQueryCriterias(ctx *BracketQueryCriteriasContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitAndQueryItem(ctx *AndQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitOrQueryCriterias(ctx *OrQueryCriteriasContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitHeaderQueryItem(ctx *HeaderQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitQueryCriteria(ctx *QueryCriteriaContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitKeyQueryItem(ctx *KeyQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitKeyCriteria(ctx *KeyCriteriaContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseQueryVisitor) VisitValueQueryItem(ctx *ValueQueryItemContext) interface{} {
+func (v *BaseQueryVisitor) VisitHeaderCriteria(ctx *HeaderCriteriaContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseQueryVisitor) VisitValueCriteria(ctx *ValueCriteriaContext) interface{} {
 	return v.VisitChildren(ctx)
 }

@@ -10,27 +10,30 @@ type QueryVisitor interface {
 	// Visit a parse tree produced by QueryParser#query.
 	VisitQuery(ctx *QueryContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#BracketQueryItem.
-	VisitBracketQueryItem(ctx *BracketQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#AndQueryCriterias.
+	VisitAndQueryCriterias(ctx *AndQueryCriteriasContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#SingleQueryItem.
-	VisitSingleQueryItem(ctx *SingleQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#NotQueryCriterias.
+	VisitNotQueryCriterias(ctx *NotQueryCriteriasContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#NotQueryItem.
-	VisitNotQueryItem(ctx *NotQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#SingleQueryCriteria.
+	VisitSingleQueryCriteria(ctx *SingleQueryCriteriaContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#OrQueryItem.
-	VisitOrQueryItem(ctx *OrQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#BracketQueryCriterias.
+	VisitBracketQueryCriterias(ctx *BracketQueryCriteriasContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#AndQueryItem.
-	VisitAndQueryItem(ctx *AndQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#OrQueryCriterias.
+	VisitOrQueryCriterias(ctx *OrQueryCriteriasContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#HeaderQueryItem.
-	VisitHeaderQueryItem(ctx *HeaderQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#queryCriteria.
+	VisitQueryCriteria(ctx *QueryCriteriaContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#KeyQueryItem.
-	VisitKeyQueryItem(ctx *KeyQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#keyCriteria.
+	VisitKeyCriteria(ctx *KeyCriteriaContext) interface{}
 
-	// Visit a parse tree produced by QueryParser#ValueQueryItem.
-	VisitValueQueryItem(ctx *ValueQueryItemContext) interface{}
+	// Visit a parse tree produced by QueryParser#headerCriteria.
+	VisitHeaderCriteria(ctx *HeaderCriteriaContext) interface{}
+
+	// Visit a parse tree produced by QueryParser#valueCriteria.
+	VisitValueCriteria(ctx *ValueCriteriaContext) interface{}
 }

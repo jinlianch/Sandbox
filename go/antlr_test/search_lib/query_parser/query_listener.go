@@ -10,54 +10,60 @@ type QueryListener interface {
 	// EnterQuery is called when entering the query production.
 	EnterQuery(c *QueryContext)
 
-	// EnterBracketQueryItem is called when entering the BracketQueryItem production.
-	EnterBracketQueryItem(c *BracketQueryItemContext)
+	// EnterAndQueryCriterias is called when entering the AndQueryCriterias production.
+	EnterAndQueryCriterias(c *AndQueryCriteriasContext)
 
-	// EnterSingleQueryItem is called when entering the SingleQueryItem production.
-	EnterSingleQueryItem(c *SingleQueryItemContext)
+	// EnterNotQueryCriterias is called when entering the NotQueryCriterias production.
+	EnterNotQueryCriterias(c *NotQueryCriteriasContext)
 
-	// EnterNotQueryItem is called when entering the NotQueryItem production.
-	EnterNotQueryItem(c *NotQueryItemContext)
+	// EnterSingleQueryCriteria is called when entering the SingleQueryCriteria production.
+	EnterSingleQueryCriteria(c *SingleQueryCriteriaContext)
 
-	// EnterOrQueryItem is called when entering the OrQueryItem production.
-	EnterOrQueryItem(c *OrQueryItemContext)
+	// EnterBracketQueryCriterias is called when entering the BracketQueryCriterias production.
+	EnterBracketQueryCriterias(c *BracketQueryCriteriasContext)
 
-	// EnterAndQueryItem is called when entering the AndQueryItem production.
-	EnterAndQueryItem(c *AndQueryItemContext)
+	// EnterOrQueryCriterias is called when entering the OrQueryCriterias production.
+	EnterOrQueryCriterias(c *OrQueryCriteriasContext)
 
-	// EnterHeaderQueryItem is called when entering the HeaderQueryItem production.
-	EnterHeaderQueryItem(c *HeaderQueryItemContext)
+	// EnterQueryCriteria is called when entering the queryCriteria production.
+	EnterQueryCriteria(c *QueryCriteriaContext)
 
-	// EnterKeyQueryItem is called when entering the KeyQueryItem production.
-	EnterKeyQueryItem(c *KeyQueryItemContext)
+	// EnterKeyCriteria is called when entering the keyCriteria production.
+	EnterKeyCriteria(c *KeyCriteriaContext)
 
-	// EnterValueQueryItem is called when entering the ValueQueryItem production.
-	EnterValueQueryItem(c *ValueQueryItemContext)
+	// EnterHeaderCriteria is called when entering the headerCriteria production.
+	EnterHeaderCriteria(c *HeaderCriteriaContext)
+
+	// EnterValueCriteria is called when entering the valueCriteria production.
+	EnterValueCriteria(c *ValueCriteriaContext)
 
 	// ExitQuery is called when exiting the query production.
 	ExitQuery(c *QueryContext)
 
-	// ExitBracketQueryItem is called when exiting the BracketQueryItem production.
-	ExitBracketQueryItem(c *BracketQueryItemContext)
+	// ExitAndQueryCriterias is called when exiting the AndQueryCriterias production.
+	ExitAndQueryCriterias(c *AndQueryCriteriasContext)
 
-	// ExitSingleQueryItem is called when exiting the SingleQueryItem production.
-	ExitSingleQueryItem(c *SingleQueryItemContext)
+	// ExitNotQueryCriterias is called when exiting the NotQueryCriterias production.
+	ExitNotQueryCriterias(c *NotQueryCriteriasContext)
 
-	// ExitNotQueryItem is called when exiting the NotQueryItem production.
-	ExitNotQueryItem(c *NotQueryItemContext)
+	// ExitSingleQueryCriteria is called when exiting the SingleQueryCriteria production.
+	ExitSingleQueryCriteria(c *SingleQueryCriteriaContext)
 
-	// ExitOrQueryItem is called when exiting the OrQueryItem production.
-	ExitOrQueryItem(c *OrQueryItemContext)
+	// ExitBracketQueryCriterias is called when exiting the BracketQueryCriterias production.
+	ExitBracketQueryCriterias(c *BracketQueryCriteriasContext)
 
-	// ExitAndQueryItem is called when exiting the AndQueryItem production.
-	ExitAndQueryItem(c *AndQueryItemContext)
+	// ExitOrQueryCriterias is called when exiting the OrQueryCriterias production.
+	ExitOrQueryCriterias(c *OrQueryCriteriasContext)
 
-	// ExitHeaderQueryItem is called when exiting the HeaderQueryItem production.
-	ExitHeaderQueryItem(c *HeaderQueryItemContext)
+	// ExitQueryCriteria is called when exiting the queryCriteria production.
+	ExitQueryCriteria(c *QueryCriteriaContext)
 
-	// ExitKeyQueryItem is called when exiting the KeyQueryItem production.
-	ExitKeyQueryItem(c *KeyQueryItemContext)
+	// ExitKeyCriteria is called when exiting the keyCriteria production.
+	ExitKeyCriteria(c *KeyCriteriaContext)
 
-	// ExitValueQueryItem is called when exiting the ValueQueryItem production.
-	ExitValueQueryItem(c *ValueQueryItemContext)
+	// ExitHeaderCriteria is called when exiting the headerCriteria production.
+	ExitHeaderCriteria(c *HeaderCriteriaContext)
+
+	// ExitValueCriteria is called when exiting the valueCriteria production.
+	ExitValueCriteria(c *ValueCriteriaContext)
 }

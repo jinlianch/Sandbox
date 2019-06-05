@@ -15,23 +15,27 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 12, 41, 4,
-	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 3, 3, 3, 3, 5, 3, 19, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 7, 3, 27, 10, 3, 12, 3, 14, 3, 30, 11, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3,
-	4, 3, 4, 3, 4, 5, 4, 39, 10, 4, 3, 4, 2, 3, 4, 5, 2, 4, 6, 2, 2, 2, 43,
-	2, 8, 3, 2, 2, 2, 4, 18, 3, 2, 2, 2, 6, 38, 3, 2, 2, 2, 8, 9, 5, 4, 3,
-	2, 9, 3, 3, 2, 2, 2, 10, 11, 8, 3, 1, 2, 11, 12, 7, 8, 2, 2, 12, 19, 5,
-	4, 3, 5, 13, 14, 7, 3, 2, 2, 14, 15, 5, 4, 3, 2, 15, 16, 7, 4, 2, 2, 16,
-	19, 3, 2, 2, 2, 17, 19, 5, 6, 4, 2, 18, 10, 3, 2, 2, 2, 18, 13, 3, 2, 2,
-	2, 18, 17, 3, 2, 2, 2, 19, 28, 3, 2, 2, 2, 20, 21, 12, 7, 2, 2, 21, 22,
-	7, 6, 2, 2, 22, 27, 5, 4, 3, 8, 23, 24, 12, 6, 2, 2, 24, 25, 7, 7, 2, 2,
-	25, 27, 5, 4, 3, 7, 26, 20, 3, 2, 2, 2, 26, 23, 3, 2, 2, 2, 27, 30, 3,
-	2, 2, 2, 28, 26, 3, 2, 2, 2, 28, 29, 3, 2, 2, 2, 29, 5, 3, 2, 2, 2, 30,
-	28, 3, 2, 2, 2, 31, 32, 7, 9, 2, 2, 32, 33, 7, 5, 2, 2, 33, 39, 7, 10,
-	2, 2, 34, 35, 7, 11, 2, 2, 35, 36, 7, 5, 2, 2, 36, 39, 7, 10, 2, 2, 37,
-	39, 7, 10, 2, 2, 38, 31, 3, 2, 2, 2, 38, 34, 3, 2, 2, 2, 38, 37, 3, 2,
-	2, 2, 39, 7, 3, 2, 2, 2, 6, 18, 26, 28, 38,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 13, 53, 4,
+	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 3,
+	2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 25, 10,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 3, 33, 10, 3, 12, 3, 14, 3, 36,
+	11, 3, 3, 4, 3, 4, 3, 4, 5, 4, 41, 10, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3, 6,
+	3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 7, 2, 3, 4, 8, 2, 4, 6, 8, 10, 12, 2,
+	3, 4, 2, 9, 9, 11, 12, 2, 52, 2, 14, 3, 2, 2, 2, 4, 24, 3, 2, 2, 2, 6,
+	40, 3, 2, 2, 2, 8, 42, 3, 2, 2, 2, 10, 46, 3, 2, 2, 2, 12, 50, 3, 2, 2,
+	2, 14, 15, 5, 4, 3, 2, 15, 3, 3, 2, 2, 2, 16, 17, 8, 3, 1, 2, 17, 18, 7,
+	7, 2, 2, 18, 25, 5, 4, 3, 5, 19, 20, 7, 3, 2, 2, 20, 21, 5, 4, 3, 2, 21,
+	22, 7, 4, 2, 2, 22, 25, 3, 2, 2, 2, 23, 25, 5, 6, 4, 2, 24, 16, 3, 2, 2,
+	2, 24, 19, 3, 2, 2, 2, 24, 23, 3, 2, 2, 2, 25, 34, 3, 2, 2, 2, 26, 27,
+	12, 7, 2, 2, 27, 28, 7, 8, 2, 2, 28, 33, 5, 4, 3, 8, 29, 30, 12, 6, 2,
+	2, 30, 31, 7, 6, 2, 2, 31, 33, 5, 4, 3, 7, 32, 26, 3, 2, 2, 2, 32, 29,
+	3, 2, 2, 2, 33, 36, 3, 2, 2, 2, 34, 32, 3, 2, 2, 2, 34, 35, 3, 2, 2, 2,
+	35, 5, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 37, 41, 5, 8, 5, 2, 38, 41, 5, 10,
+	6, 2, 39, 41, 5, 12, 7, 2, 40, 37, 3, 2, 2, 2, 40, 38, 3, 2, 2, 2, 40,
+	39, 3, 2, 2, 2, 41, 7, 3, 2, 2, 2, 42, 43, 7, 9, 2, 2, 43, 44, 7, 5, 2,
+	2, 44, 45, 5, 12, 7, 2, 45, 9, 3, 2, 2, 2, 46, 47, 7, 10, 2, 2, 47, 48,
+	7, 5, 2, 2, 48, 49, 5, 12, 7, 2, 49, 11, 3, 2, 2, 2, 50, 51, 9, 2, 2, 2,
+	51, 13, 3, 2, 2, 2, 6, 24, 32, 34, 40,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
@@ -40,11 +44,13 @@ var literalNames = []string{
 	"", "'('", "')'", "':'",
 }
 var symbolicNames = []string{
-	"", "", "", "", "AND", "OR", "NOT", "ID", "STRING", "HEADER", "WS",
+	"", "", "", "", "OR", "NOT", "AND", "KEY", "HEADER", "NOQUOTE_STRING",
+	"QUOTE_STRING", "WS",
 }
 
 var ruleNames = []string{
-	"query", "query_item", "single_query_item",
+	"query", "queryCriterias", "queryCriteria", "keyCriteria", "headerCriteria",
+	"valueCriteria",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -74,24 +80,28 @@ func NewQueryParser(input antlr.TokenStream) *QueryParser {
 
 // QueryParser tokens.
 const (
-	QueryParserEOF    = antlr.TokenEOF
-	QueryParserT__0   = 1
-	QueryParserT__1   = 2
-	QueryParserT__2   = 3
-	QueryParserAND    = 4
-	QueryParserOR     = 5
-	QueryParserNOT    = 6
-	QueryParserID     = 7
-	QueryParserSTRING = 8
-	QueryParserHEADER = 9
-	QueryParserWS     = 10
+	QueryParserEOF            = antlr.TokenEOF
+	QueryParserT__0           = 1
+	QueryParserT__1           = 2
+	QueryParserT__2           = 3
+	QueryParserOR             = 4
+	QueryParserNOT            = 5
+	QueryParserAND            = 6
+	QueryParserKEY            = 7
+	QueryParserHEADER         = 8
+	QueryParserNOQUOTE_STRING = 9
+	QueryParserQUOTE_STRING   = 10
+	QueryParserWS             = 11
 )
 
 // QueryParser rules.
 const (
-	QueryParserRULE_query             = 0
-	QueryParserRULE_query_item        = 1
-	QueryParserRULE_single_query_item = 2
+	QueryParserRULE_query          = 0
+	QueryParserRULE_queryCriterias = 1
+	QueryParserRULE_queryCriteria  = 2
+	QueryParserRULE_keyCriteria    = 3
+	QueryParserRULE_headerCriteria = 4
+	QueryParserRULE_valueCriteria  = 5
 )
 
 // IQueryContext is an interface to support dynamic dispatch.
@@ -132,14 +142,14 @@ func NewQueryContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 
 func (s *QueryContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *QueryContext) Query_item() IQuery_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem(), 0)
+func (s *QueryContext) QueryCriterias() IQueryCriteriasContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IQuery_itemContext)
+	return t.(IQueryCriteriasContext)
 }
 
 func (s *QueryContext) GetRuleContext() antlr.RuleContext {
@@ -194,363 +204,363 @@ func (p *QueryParser) Query() (localctx IQueryContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(6)
-		p.query_item(0)
+		p.SetState(12)
+		p.queryCriterias(0)
 	}
 
 	return localctx
 }
 
-// IQuery_itemContext is an interface to support dynamic dispatch.
-type IQuery_itemContext interface {
+// IQueryCriteriasContext is an interface to support dynamic dispatch.
+type IQueryCriteriasContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsQuery_itemContext differentiates from other interfaces.
-	IsQuery_itemContext()
+	// IsQueryCriteriasContext differentiates from other interfaces.
+	IsQueryCriteriasContext()
 }
 
-type Query_itemContext struct {
+type QueryCriteriasContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyQuery_itemContext() *Query_itemContext {
-	var p = new(Query_itemContext)
+func NewEmptyQueryCriteriasContext() *QueryCriteriasContext {
+	var p = new(QueryCriteriasContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = QueryParserRULE_query_item
+	p.RuleIndex = QueryParserRULE_queryCriterias
 	return p
 }
 
-func (*Query_itemContext) IsQuery_itemContext() {}
+func (*QueryCriteriasContext) IsQueryCriteriasContext() {}
 
-func NewQuery_itemContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Query_itemContext {
-	var p = new(Query_itemContext)
+func NewQueryCriteriasContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *QueryCriteriasContext {
+	var p = new(QueryCriteriasContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = QueryParserRULE_query_item
+	p.RuleIndex = QueryParserRULE_queryCriterias
 
 	return p
 }
 
-func (s *Query_itemContext) GetParser() antlr.Parser { return s.parser }
+func (s *QueryCriteriasContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Query_itemContext) CopyFrom(ctx *Query_itemContext) {
+func (s *QueryCriteriasContext) CopyFrom(ctx *QueryCriteriasContext) {
 	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
 }
 
-func (s *Query_itemContext) GetRuleContext() antlr.RuleContext {
+func (s *QueryCriteriasContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *Query_itemContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *QueryCriteriasContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-type BracketQueryItemContext struct {
-	*Query_itemContext
+type AndQueryCriteriasContext struct {
+	*QueryCriteriasContext
 }
 
-func NewBracketQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *BracketQueryItemContext {
-	var p = new(BracketQueryItemContext)
+func NewAndQueryCriteriasContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *AndQueryCriteriasContext {
+	var p = new(AndQueryCriteriasContext)
 
-	p.Query_itemContext = NewEmptyQuery_itemContext()
+	p.QueryCriteriasContext = NewEmptyQueryCriteriasContext()
 	p.parser = parser
-	p.CopyFrom(ctx.(*Query_itemContext))
+	p.CopyFrom(ctx.(*QueryCriteriasContext))
 
 	return p
 }
 
-func (s *BracketQueryItemContext) GetRuleContext() antlr.RuleContext {
+func (s *AndQueryCriteriasContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *BracketQueryItemContext) Query_item() IQuery_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IQuery_itemContext)
-}
-
-func (s *BracketQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterBracketQueryItem(s)
-	}
-}
-
-func (s *BracketQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitBracketQueryItem(s)
-	}
-}
-
-func (s *BracketQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitBracketQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-type SingleQueryItemContext struct {
-	*Query_itemContext
-}
-
-func NewSingleQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *SingleQueryItemContext {
-	var p = new(SingleQueryItemContext)
-
-	p.Query_itemContext = NewEmptyQuery_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Query_itemContext))
-
-	return p
-}
-
-func (s *SingleQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *SingleQueryItemContext) Single_query_item() ISingle_query_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISingle_query_itemContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ISingle_query_itemContext)
-}
-
-func (s *SingleQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterSingleQueryItem(s)
-	}
-}
-
-func (s *SingleQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitSingleQueryItem(s)
-	}
-}
-
-func (s *SingleQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitSingleQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-type NotQueryItemContext struct {
-	*Query_itemContext
-}
-
-func NewNotQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *NotQueryItemContext {
-	var p = new(NotQueryItemContext)
-
-	p.Query_itemContext = NewEmptyQuery_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Query_itemContext))
-
-	return p
-}
-
-func (s *NotQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *NotQueryItemContext) NOT() antlr.TerminalNode {
-	return s.GetToken(QueryParserNOT, 0)
-}
-
-func (s *NotQueryItemContext) Query_item() IQuery_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IQuery_itemContext)
-}
-
-func (s *NotQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterNotQueryItem(s)
-	}
-}
-
-func (s *NotQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitNotQueryItem(s)
-	}
-}
-
-func (s *NotQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitNotQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-type OrQueryItemContext struct {
-	*Query_itemContext
-}
-
-func NewOrQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *OrQueryItemContext {
-	var p = new(OrQueryItemContext)
-
-	p.Query_itemContext = NewEmptyQuery_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Query_itemContext))
-
-	return p
-}
-
-func (s *OrQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *OrQueryItemContext) AllQuery_item() []IQuery_itemContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem())
-	var tst = make([]IQuery_itemContext, len(ts))
+func (s *AndQueryCriteriasContext) AllQueryCriterias() []IQueryCriteriasContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem())
+	var tst = make([]IQueryCriteriasContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IQuery_itemContext)
+			tst[i] = t.(IQueryCriteriasContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *OrQueryItemContext) Query_item(i int) IQuery_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem(), i)
+func (s *AndQueryCriteriasContext) QueryCriterias(i int) IQueryCriteriasContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IQuery_itemContext)
+	return t.(IQueryCriteriasContext)
 }
 
-func (s *OrQueryItemContext) OR() antlr.TerminalNode {
-	return s.GetToken(QueryParserOR, 0)
-}
-
-func (s *OrQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterOrQueryItem(s)
-	}
-}
-
-func (s *OrQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitOrQueryItem(s)
-	}
-}
-
-func (s *OrQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitOrQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-type AndQueryItemContext struct {
-	*Query_itemContext
-}
-
-func NewAndQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *AndQueryItemContext {
-	var p = new(AndQueryItemContext)
-
-	p.Query_itemContext = NewEmptyQuery_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Query_itemContext))
-
-	return p
-}
-
-func (s *AndQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *AndQueryItemContext) AllQuery_item() []IQuery_itemContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem())
-	var tst = make([]IQuery_itemContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IQuery_itemContext)
-		}
-	}
-
-	return tst
-}
-
-func (s *AndQueryItemContext) Query_item(i int) IQuery_itemContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuery_itemContext)(nil)).Elem(), i)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IQuery_itemContext)
-}
-
-func (s *AndQueryItemContext) AND() antlr.TerminalNode {
+func (s *AndQueryCriteriasContext) AND() antlr.TerminalNode {
 	return s.GetToken(QueryParserAND, 0)
 }
 
-func (s *AndQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *AndQueryCriteriasContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterAndQueryItem(s)
+		listenerT.EnterAndQueryCriterias(s)
 	}
 }
 
-func (s *AndQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *AndQueryCriteriasContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitAndQueryItem(s)
+		listenerT.ExitAndQueryCriterias(s)
 	}
 }
 
-func (s *AndQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *AndQueryCriteriasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case QueryVisitor:
-		return t.VisitAndQueryItem(s)
+		return t.VisitAndQueryCriterias(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *QueryParser) Query_item() (localctx IQuery_itemContext) {
-	return p.query_item(0)
+type NotQueryCriteriasContext struct {
+	*QueryCriteriasContext
 }
 
-func (p *QueryParser) query_item(_p int) (localctx IQuery_itemContext) {
+func NewNotQueryCriteriasContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *NotQueryCriteriasContext {
+	var p = new(NotQueryCriteriasContext)
+
+	p.QueryCriteriasContext = NewEmptyQueryCriteriasContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*QueryCriteriasContext))
+
+	return p
+}
+
+func (s *NotQueryCriteriasContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *NotQueryCriteriasContext) NOT() antlr.TerminalNode {
+	return s.GetToken(QueryParserNOT, 0)
+}
+
+func (s *NotQueryCriteriasContext) QueryCriterias() IQueryCriteriasContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IQueryCriteriasContext)
+}
+
+func (s *NotQueryCriteriasContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterNotQueryCriterias(s)
+	}
+}
+
+func (s *NotQueryCriteriasContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitNotQueryCriterias(s)
+	}
+}
+
+func (s *NotQueryCriteriasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitNotQueryCriterias(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type SingleQueryCriteriaContext struct {
+	*QueryCriteriasContext
+}
+
+func NewSingleQueryCriteriaContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *SingleQueryCriteriaContext {
+	var p = new(SingleQueryCriteriaContext)
+
+	p.QueryCriteriasContext = NewEmptyQueryCriteriasContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*QueryCriteriasContext))
+
+	return p
+}
+
+func (s *SingleQueryCriteriaContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SingleQueryCriteriaContext) QueryCriteria() IQueryCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IQueryCriteriaContext)
+}
+
+func (s *SingleQueryCriteriaContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterSingleQueryCriteria(s)
+	}
+}
+
+func (s *SingleQueryCriteriaContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitSingleQueryCriteria(s)
+	}
+}
+
+func (s *SingleQueryCriteriaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitSingleQueryCriteria(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type BracketQueryCriteriasContext struct {
+	*QueryCriteriasContext
+}
+
+func NewBracketQueryCriteriasContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *BracketQueryCriteriasContext {
+	var p = new(BracketQueryCriteriasContext)
+
+	p.QueryCriteriasContext = NewEmptyQueryCriteriasContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*QueryCriteriasContext))
+
+	return p
+}
+
+func (s *BracketQueryCriteriasContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *BracketQueryCriteriasContext) QueryCriterias() IQueryCriteriasContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IQueryCriteriasContext)
+}
+
+func (s *BracketQueryCriteriasContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterBracketQueryCriterias(s)
+	}
+}
+
+func (s *BracketQueryCriteriasContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitBracketQueryCriterias(s)
+	}
+}
+
+func (s *BracketQueryCriteriasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitBracketQueryCriterias(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type OrQueryCriteriasContext struct {
+	*QueryCriteriasContext
+}
+
+func NewOrQueryCriteriasContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *OrQueryCriteriasContext {
+	var p = new(OrQueryCriteriasContext)
+
+	p.QueryCriteriasContext = NewEmptyQueryCriteriasContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*QueryCriteriasContext))
+
+	return p
+}
+
+func (s *OrQueryCriteriasContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *OrQueryCriteriasContext) AllQueryCriterias() []IQueryCriteriasContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem())
+	var tst = make([]IQueryCriteriasContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IQueryCriteriasContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *OrQueryCriteriasContext) QueryCriterias(i int) IQueryCriteriasContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQueryCriteriasContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IQueryCriteriasContext)
+}
+
+func (s *OrQueryCriteriasContext) OR() antlr.TerminalNode {
+	return s.GetToken(QueryParserOR, 0)
+}
+
+func (s *OrQueryCriteriasContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterOrQueryCriterias(s)
+	}
+}
+
+func (s *OrQueryCriteriasContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitOrQueryCriterias(s)
+	}
+}
+
+func (s *OrQueryCriteriasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitOrQueryCriterias(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *QueryParser) QueryCriterias() (localctx IQueryCriteriasContext) {
+	return p.queryCriterias(0)
+}
+
+func (p *QueryParser) queryCriterias(_p int) (localctx IQueryCriteriasContext) {
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
-	localctx = NewQuery_itemContext(p, p.GetParserRuleContext(), _parentState)
-	var _prevctx IQuery_itemContext = localctx
+	localctx = NewQueryCriteriasContext(p, p.GetParserRuleContext(), _parentState)
+	var _prevctx IQueryCriteriasContext = localctx
 	var _ antlr.ParserRuleContext = _prevctx // TODO: To prevent unused variable warning.
 	_startState := 2
-	p.EnterRecursionRule(localctx, 2, QueryParserRULE_query_item, _p)
+	p.EnterRecursionRule(localctx, 2, QueryParserRULE_queryCriterias, _p)
 
 	defer func() {
 		p.UnrollRecursionContexts(_parentctx)
@@ -571,55 +581,55 @@ func (p *QueryParser) query_item(_p int) (localctx IQuery_itemContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(16)
+	p.SetState(22)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case QueryParserNOT:
-		localctx = NewNotQueryItemContext(p, localctx)
+		localctx = NewNotQueryCriteriasContext(p, localctx)
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 
 		{
-			p.SetState(9)
+			p.SetState(15)
 			p.Match(QueryParserNOT)
 		}
 		{
-			p.SetState(10)
-			p.query_item(3)
+			p.SetState(16)
+			p.queryCriterias(3)
 		}
 
 	case QueryParserT__0:
-		localctx = NewBracketQueryItemContext(p, localctx)
+		localctx = NewBracketQueryCriteriasContext(p, localctx)
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(11)
+			p.SetState(17)
 			p.Match(QueryParserT__0)
 		}
 		{
-			p.SetState(12)
-			p.query_item(0)
+			p.SetState(18)
+			p.queryCriterias(0)
 		}
 		{
-			p.SetState(13)
+			p.SetState(19)
 			p.Match(QueryParserT__1)
 		}
 
-	case QueryParserID, QueryParserSTRING, QueryParserHEADER:
-		localctx = NewSingleQueryItemContext(p, localctx)
+	case QueryParserKEY, QueryParserHEADER, QueryParserNOQUOTE_STRING, QueryParserQUOTE_STRING:
+		localctx = NewSingleQueryCriteriaContext(p, localctx)
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(15)
-			p.Single_query_item()
+			p.SetState(21)
+			p.QueryCriteria()
 		}
 
 	default:
 		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(26)
+	p.SetState(32)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
 
@@ -629,47 +639,47 @@ func (p *QueryParser) query_item(_p int) (localctx IQuery_itemContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(24)
+			p.SetState(30)
 			p.GetErrorHandler().Sync(p)
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) {
 			case 1:
-				localctx = NewAndQueryItemContext(p, NewQuery_itemContext(p, _parentctx, _parentState))
-				p.PushNewRecursionContext(localctx, _startState, QueryParserRULE_query_item)
-				p.SetState(18)
+				localctx = NewAndQueryCriteriasContext(p, NewQueryCriteriasContext(p, _parentctx, _parentState))
+				p.PushNewRecursionContext(localctx, _startState, QueryParserRULE_queryCriterias)
+				p.SetState(24)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
 				{
-					p.SetState(19)
+					p.SetState(25)
 					p.Match(QueryParserAND)
 				}
 				{
-					p.SetState(20)
-					p.query_item(6)
+					p.SetState(26)
+					p.queryCriterias(6)
 				}
 
 			case 2:
-				localctx = NewOrQueryItemContext(p, NewQuery_itemContext(p, _parentctx, _parentState))
-				p.PushNewRecursionContext(localctx, _startState, QueryParserRULE_query_item)
-				p.SetState(21)
+				localctx = NewOrQueryCriteriasContext(p, NewQueryCriteriasContext(p, _parentctx, _parentState))
+				p.PushNewRecursionContext(localctx, _startState, QueryParserRULE_queryCriterias)
+				p.SetState(27)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				}
 				{
-					p.SetState(22)
+					p.SetState(28)
 					p.Match(QueryParserOR)
 				}
 				{
-					p.SetState(23)
-					p.query_item(5)
+					p.SetState(29)
+					p.queryCriterias(5)
 				}
 
 			}
 
 		}
-		p.SetState(28)
+		p.SetState(34)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
 	}
@@ -677,199 +687,107 @@ func (p *QueryParser) query_item(_p int) (localctx IQuery_itemContext) {
 	return localctx
 }
 
-// ISingle_query_itemContext is an interface to support dynamic dispatch.
-type ISingle_query_itemContext interface {
+// IQueryCriteriaContext is an interface to support dynamic dispatch.
+type IQueryCriteriaContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsSingle_query_itemContext differentiates from other interfaces.
-	IsSingle_query_itemContext()
+	// IsQueryCriteriaContext differentiates from other interfaces.
+	IsQueryCriteriaContext()
 }
 
-type Single_query_itemContext struct {
+type QueryCriteriaContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptySingle_query_itemContext() *Single_query_itemContext {
-	var p = new(Single_query_itemContext)
+func NewEmptyQueryCriteriaContext() *QueryCriteriaContext {
+	var p = new(QueryCriteriaContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = QueryParserRULE_single_query_item
+	p.RuleIndex = QueryParserRULE_queryCriteria
 	return p
 }
 
-func (*Single_query_itemContext) IsSingle_query_itemContext() {}
+func (*QueryCriteriaContext) IsQueryCriteriaContext() {}
 
-func NewSingle_query_itemContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Single_query_itemContext {
-	var p = new(Single_query_itemContext)
+func NewQueryCriteriaContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *QueryCriteriaContext {
+	var p = new(QueryCriteriaContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = QueryParserRULE_single_query_item
+	p.RuleIndex = QueryParserRULE_queryCriteria
 
 	return p
 }
 
-func (s *Single_query_itemContext) GetParser() antlr.Parser { return s.parser }
+func (s *QueryCriteriaContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Single_query_itemContext) CopyFrom(ctx *Single_query_itemContext) {
-	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
+func (s *QueryCriteriaContext) KeyCriteria() IKeyCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IKeyCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IKeyCriteriaContext)
 }
 
-func (s *Single_query_itemContext) GetRuleContext() antlr.RuleContext {
+func (s *QueryCriteriaContext) HeaderCriteria() IHeaderCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IHeaderCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IHeaderCriteriaContext)
+}
+
+func (s *QueryCriteriaContext) ValueCriteria() IValueCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IValueCriteriaContext)
+}
+
+func (s *QueryCriteriaContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *Single_query_itemContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *QueryCriteriaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-type HeaderQueryItemContext struct {
-	*Single_query_itemContext
-}
-
-func NewHeaderQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *HeaderQueryItemContext {
-	var p = new(HeaderQueryItemContext)
-
-	p.Single_query_itemContext = NewEmptySingle_query_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Single_query_itemContext))
-
-	return p
-}
-
-func (s *HeaderQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *HeaderQueryItemContext) ID() antlr.TerminalNode {
-	return s.GetToken(QueryParserID, 0)
-}
-
-func (s *HeaderQueryItemContext) STRING() antlr.TerminalNode {
-	return s.GetToken(QueryParserSTRING, 0)
-}
-
-func (s *HeaderQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *QueryCriteriaContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterHeaderQueryItem(s)
+		listenerT.EnterQueryCriteria(s)
 	}
 }
 
-func (s *HeaderQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *QueryCriteriaContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitHeaderQueryItem(s)
+		listenerT.ExitQueryCriteria(s)
 	}
 }
 
-func (s *HeaderQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *QueryCriteriaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case QueryVisitor:
-		return t.VisitHeaderQueryItem(s)
+		return t.VisitQueryCriteria(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-type ValueQueryItemContext struct {
-	*Single_query_itemContext
-}
-
-func NewValueQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ValueQueryItemContext {
-	var p = new(ValueQueryItemContext)
-
-	p.Single_query_itemContext = NewEmptySingle_query_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Single_query_itemContext))
-
-	return p
-}
-
-func (s *ValueQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ValueQueryItemContext) STRING() antlr.TerminalNode {
-	return s.GetToken(QueryParserSTRING, 0)
-}
-
-func (s *ValueQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterValueQueryItem(s)
-	}
-}
-
-func (s *ValueQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitValueQueryItem(s)
-	}
-}
-
-func (s *ValueQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitValueQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-type KeyQueryItemContext struct {
-	*Single_query_itemContext
-}
-
-func NewKeyQueryItemContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *KeyQueryItemContext {
-	var p = new(KeyQueryItemContext)
-
-	p.Single_query_itemContext = NewEmptySingle_query_itemContext()
-	p.parser = parser
-	p.CopyFrom(ctx.(*Single_query_itemContext))
-
-	return p
-}
-
-func (s *KeyQueryItemContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *KeyQueryItemContext) HEADER() antlr.TerminalNode {
-	return s.GetToken(QueryParserHEADER, 0)
-}
-
-func (s *KeyQueryItemContext) STRING() antlr.TerminalNode {
-	return s.GetToken(QueryParserSTRING, 0)
-}
-
-func (s *KeyQueryItemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.EnterKeyQueryItem(s)
-	}
-}
-
-func (s *KeyQueryItemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(QueryListener); ok {
-		listenerT.ExitKeyQueryItem(s)
-	}
-}
-
-func (s *KeyQueryItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case QueryVisitor:
-		return t.VisitKeyQueryItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *QueryParser) Single_query_item() (localctx ISingle_query_itemContext) {
-	localctx = NewSingle_query_itemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, QueryParserRULE_single_query_item)
+func (p *QueryParser) QueryCriteria() (localctx IQueryCriteriaContext) {
+	localctx = NewQueryCriteriaContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, QueryParserRULE_queryCriteria)
 
 	defer func() {
 		p.ExitRule()
@@ -887,52 +805,385 @@ func (p *QueryParser) Single_query_item() (localctx ISingle_query_itemContext) {
 		}
 	}()
 
-	p.SetState(36)
+	p.SetState(38)
 	p.GetErrorHandler().Sync(p)
-
-	switch p.GetTokenStream().LA(1) {
-	case QueryParserID:
-		localctx = NewHeaderQueryItemContext(p, localctx)
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext()) {
+	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(29)
-			p.Match(QueryParserID)
-		}
-		{
-			p.SetState(30)
-			p.Match(QueryParserT__2)
-		}
-		{
-			p.SetState(31)
-			p.Match(QueryParserSTRING)
+			p.SetState(35)
+			p.KeyCriteria()
 		}
 
-	case QueryParserHEADER:
-		localctx = NewKeyQueryItemContext(p, localctx)
+	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(32)
-			p.Match(QueryParserHEADER)
-		}
-		{
-			p.SetState(33)
-			p.Match(QueryParserT__2)
-		}
-		{
-			p.SetState(34)
-			p.Match(QueryParserSTRING)
+			p.SetState(36)
+			p.HeaderCriteria()
 		}
 
-	case QueryParserSTRING:
-		localctx = NewValueQueryItemContext(p, localctx)
+	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(35)
-			p.Match(QueryParserSTRING)
+			p.SetState(37)
+			p.ValueCriteria()
 		}
 
+	}
+
+	return localctx
+}
+
+// IKeyCriteriaContext is an interface to support dynamic dispatch.
+type IKeyCriteriaContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsKeyCriteriaContext differentiates from other interfaces.
+	IsKeyCriteriaContext()
+}
+
+type KeyCriteriaContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyKeyCriteriaContext() *KeyCriteriaContext {
+	var p = new(KeyCriteriaContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = QueryParserRULE_keyCriteria
+	return p
+}
+
+func (*KeyCriteriaContext) IsKeyCriteriaContext() {}
+
+func NewKeyCriteriaContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *KeyCriteriaContext {
+	var p = new(KeyCriteriaContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = QueryParserRULE_keyCriteria
+
+	return p
+}
+
+func (s *KeyCriteriaContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *KeyCriteriaContext) KEY() antlr.TerminalNode {
+	return s.GetToken(QueryParserKEY, 0)
+}
+
+func (s *KeyCriteriaContext) ValueCriteria() IValueCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IValueCriteriaContext)
+}
+
+func (s *KeyCriteriaContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *KeyCriteriaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *KeyCriteriaContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterKeyCriteria(s)
+	}
+}
+
+func (s *KeyCriteriaContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitKeyCriteria(s)
+	}
+}
+
+func (s *KeyCriteriaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitKeyCriteria(s)
+
 	default:
-		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *QueryParser) KeyCriteria() (localctx IKeyCriteriaContext) {
+	localctx = NewKeyCriteriaContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, QueryParserRULE_keyCriteria)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(40)
+		p.Match(QueryParserKEY)
+	}
+	{
+		p.SetState(41)
+		p.Match(QueryParserT__2)
+	}
+	{
+		p.SetState(42)
+		p.ValueCriteria()
+	}
+
+	return localctx
+}
+
+// IHeaderCriteriaContext is an interface to support dynamic dispatch.
+type IHeaderCriteriaContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsHeaderCriteriaContext differentiates from other interfaces.
+	IsHeaderCriteriaContext()
+}
+
+type HeaderCriteriaContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyHeaderCriteriaContext() *HeaderCriteriaContext {
+	var p = new(HeaderCriteriaContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = QueryParserRULE_headerCriteria
+	return p
+}
+
+func (*HeaderCriteriaContext) IsHeaderCriteriaContext() {}
+
+func NewHeaderCriteriaContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *HeaderCriteriaContext {
+	var p = new(HeaderCriteriaContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = QueryParserRULE_headerCriteria
+
+	return p
+}
+
+func (s *HeaderCriteriaContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *HeaderCriteriaContext) HEADER() antlr.TerminalNode {
+	return s.GetToken(QueryParserHEADER, 0)
+}
+
+func (s *HeaderCriteriaContext) ValueCriteria() IValueCriteriaContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueCriteriaContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IValueCriteriaContext)
+}
+
+func (s *HeaderCriteriaContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *HeaderCriteriaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *HeaderCriteriaContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterHeaderCriteria(s)
+	}
+}
+
+func (s *HeaderCriteriaContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitHeaderCriteria(s)
+	}
+}
+
+func (s *HeaderCriteriaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitHeaderCriteria(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *QueryParser) HeaderCriteria() (localctx IHeaderCriteriaContext) {
+	localctx = NewHeaderCriteriaContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, QueryParserRULE_headerCriteria)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(44)
+		p.Match(QueryParserHEADER)
+	}
+	{
+		p.SetState(45)
+		p.Match(QueryParserT__2)
+	}
+	{
+		p.SetState(46)
+		p.ValueCriteria()
+	}
+
+	return localctx
+}
+
+// IValueCriteriaContext is an interface to support dynamic dispatch.
+type IValueCriteriaContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsValueCriteriaContext differentiates from other interfaces.
+	IsValueCriteriaContext()
+}
+
+type ValueCriteriaContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyValueCriteriaContext() *ValueCriteriaContext {
+	var p = new(ValueCriteriaContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = QueryParserRULE_valueCriteria
+	return p
+}
+
+func (*ValueCriteriaContext) IsValueCriteriaContext() {}
+
+func NewValueCriteriaContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ValueCriteriaContext {
+	var p = new(ValueCriteriaContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = QueryParserRULE_valueCriteria
+
+	return p
+}
+
+func (s *ValueCriteriaContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ValueCriteriaContext) KEY() antlr.TerminalNode {
+	return s.GetToken(QueryParserKEY, 0)
+}
+
+func (s *ValueCriteriaContext) QUOTE_STRING() antlr.TerminalNode {
+	return s.GetToken(QueryParserQUOTE_STRING, 0)
+}
+
+func (s *ValueCriteriaContext) NOQUOTE_STRING() antlr.TerminalNode {
+	return s.GetToken(QueryParserNOQUOTE_STRING, 0)
+}
+
+func (s *ValueCriteriaContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ValueCriteriaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ValueCriteriaContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.EnterValueCriteria(s)
+	}
+}
+
+func (s *ValueCriteriaContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(QueryListener); ok {
+		listenerT.ExitValueCriteria(s)
+	}
+}
+
+func (s *ValueCriteriaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case QueryVisitor:
+		return t.VisitValueCriteria(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *QueryParser) ValueCriteria() (localctx IValueCriteriaContext) {
+	localctx = NewValueCriteriaContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, QueryParserRULE_valueCriteria)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(48)
+		_la = p.GetTokenStream().LA(1)
+
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<QueryParserKEY)|(1<<QueryParserNOQUOTE_STRING)|(1<<QueryParserQUOTE_STRING))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -941,18 +1192,18 @@ func (p *QueryParser) Single_query_item() (localctx ISingle_query_itemContext) {
 func (p *QueryParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
 	switch ruleIndex {
 	case 1:
-		var t *Query_itemContext = nil
+		var t *QueryCriteriasContext = nil
 		if localctx != nil {
-			t = localctx.(*Query_itemContext)
+			t = localctx.(*QueryCriteriasContext)
 		}
-		return p.Query_item_Sempred(t, predIndex)
+		return p.QueryCriterias_Sempred(t, predIndex)
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(ruleIndex))
 	}
 }
 
-func (p *QueryParser) Query_item_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *QueryParser) QueryCriterias_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 5)

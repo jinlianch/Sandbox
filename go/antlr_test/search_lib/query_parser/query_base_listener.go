@@ -26,50 +26,56 @@ func (s *BaseQueryListener) EnterQuery(ctx *QueryContext) {}
 // ExitQuery is called when production query is exited.
 func (s *BaseQueryListener) ExitQuery(ctx *QueryContext) {}
 
-// EnterBracketQueryItem is called when production BracketQueryItem is entered.
-func (s *BaseQueryListener) EnterBracketQueryItem(ctx *BracketQueryItemContext) {}
+// EnterAndQueryCriterias is called when production AndQueryCriterias is entered.
+func (s *BaseQueryListener) EnterAndQueryCriterias(ctx *AndQueryCriteriasContext) {}
 
-// ExitBracketQueryItem is called when production BracketQueryItem is exited.
-func (s *BaseQueryListener) ExitBracketQueryItem(ctx *BracketQueryItemContext) {}
+// ExitAndQueryCriterias is called when production AndQueryCriterias is exited.
+func (s *BaseQueryListener) ExitAndQueryCriterias(ctx *AndQueryCriteriasContext) {}
 
-// EnterSingleQueryItem is called when production SingleQueryItem is entered.
-func (s *BaseQueryListener) EnterSingleQueryItem(ctx *SingleQueryItemContext) {}
+// EnterNotQueryCriterias is called when production NotQueryCriterias is entered.
+func (s *BaseQueryListener) EnterNotQueryCriterias(ctx *NotQueryCriteriasContext) {}
 
-// ExitSingleQueryItem is called when production SingleQueryItem is exited.
-func (s *BaseQueryListener) ExitSingleQueryItem(ctx *SingleQueryItemContext) {}
+// ExitNotQueryCriterias is called when production NotQueryCriterias is exited.
+func (s *BaseQueryListener) ExitNotQueryCriterias(ctx *NotQueryCriteriasContext) {}
 
-// EnterNotQueryItem is called when production NotQueryItem is entered.
-func (s *BaseQueryListener) EnterNotQueryItem(ctx *NotQueryItemContext) {}
+// EnterSingleQueryCriteria is called when production SingleQueryCriteria is entered.
+func (s *BaseQueryListener) EnterSingleQueryCriteria(ctx *SingleQueryCriteriaContext) {}
 
-// ExitNotQueryItem is called when production NotQueryItem is exited.
-func (s *BaseQueryListener) ExitNotQueryItem(ctx *NotQueryItemContext) {}
+// ExitSingleQueryCriteria is called when production SingleQueryCriteria is exited.
+func (s *BaseQueryListener) ExitSingleQueryCriteria(ctx *SingleQueryCriteriaContext) {}
 
-// EnterOrQueryItem is called when production OrQueryItem is entered.
-func (s *BaseQueryListener) EnterOrQueryItem(ctx *OrQueryItemContext) {}
+// EnterBracketQueryCriterias is called when production BracketQueryCriterias is entered.
+func (s *BaseQueryListener) EnterBracketQueryCriterias(ctx *BracketQueryCriteriasContext) {}
 
-// ExitOrQueryItem is called when production OrQueryItem is exited.
-func (s *BaseQueryListener) ExitOrQueryItem(ctx *OrQueryItemContext) {}
+// ExitBracketQueryCriterias is called when production BracketQueryCriterias is exited.
+func (s *BaseQueryListener) ExitBracketQueryCriterias(ctx *BracketQueryCriteriasContext) {}
 
-// EnterAndQueryItem is called when production AndQueryItem is entered.
-func (s *BaseQueryListener) EnterAndQueryItem(ctx *AndQueryItemContext) {}
+// EnterOrQueryCriterias is called when production OrQueryCriterias is entered.
+func (s *BaseQueryListener) EnterOrQueryCriterias(ctx *OrQueryCriteriasContext) {}
 
-// ExitAndQueryItem is called when production AndQueryItem is exited.
-func (s *BaseQueryListener) ExitAndQueryItem(ctx *AndQueryItemContext) {}
+// ExitOrQueryCriterias is called when production OrQueryCriterias is exited.
+func (s *BaseQueryListener) ExitOrQueryCriterias(ctx *OrQueryCriteriasContext) {}
 
-// EnterHeaderQueryItem is called when production HeaderQueryItem is entered.
-func (s *BaseQueryListener) EnterHeaderQueryItem(ctx *HeaderQueryItemContext) {}
+// EnterQueryCriteria is called when production queryCriteria is entered.
+func (s *BaseQueryListener) EnterQueryCriteria(ctx *QueryCriteriaContext) {}
 
-// ExitHeaderQueryItem is called when production HeaderQueryItem is exited.
-func (s *BaseQueryListener) ExitHeaderQueryItem(ctx *HeaderQueryItemContext) {}
+// ExitQueryCriteria is called when production queryCriteria is exited.
+func (s *BaseQueryListener) ExitQueryCriteria(ctx *QueryCriteriaContext) {}
 
-// EnterKeyQueryItem is called when production KeyQueryItem is entered.
-func (s *BaseQueryListener) EnterKeyQueryItem(ctx *KeyQueryItemContext) {}
+// EnterKeyCriteria is called when production keyCriteria is entered.
+func (s *BaseQueryListener) EnterKeyCriteria(ctx *KeyCriteriaContext) {}
 
-// ExitKeyQueryItem is called when production KeyQueryItem is exited.
-func (s *BaseQueryListener) ExitKeyQueryItem(ctx *KeyQueryItemContext) {}
+// ExitKeyCriteria is called when production keyCriteria is exited.
+func (s *BaseQueryListener) ExitKeyCriteria(ctx *KeyCriteriaContext) {}
 
-// EnterValueQueryItem is called when production ValueQueryItem is entered.
-func (s *BaseQueryListener) EnterValueQueryItem(ctx *ValueQueryItemContext) {}
+// EnterHeaderCriteria is called when production headerCriteria is entered.
+func (s *BaseQueryListener) EnterHeaderCriteria(ctx *HeaderCriteriaContext) {}
 
-// ExitValueQueryItem is called when production ValueQueryItem is exited.
-func (s *BaseQueryListener) ExitValueQueryItem(ctx *ValueQueryItemContext) {}
+// ExitHeaderCriteria is called when production headerCriteria is exited.
+func (s *BaseQueryListener) ExitHeaderCriteria(ctx *HeaderCriteriaContext) {}
+
+// EnterValueCriteria is called when production valueCriteria is entered.
+func (s *BaseQueryListener) EnterValueCriteria(ctx *ValueCriteriaContext) {}
+
+// ExitValueCriteria is called when production valueCriteria is exited.
+func (s *BaseQueryListener) ExitValueCriteria(ctx *ValueCriteriaContext) {}
