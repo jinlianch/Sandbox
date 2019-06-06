@@ -274,6 +274,6 @@ func testQueryParserVistor() {
 
 func main() {
 	testQueryParserIterate()
-	testQueryParserListener()
-	testQueryParserVistor()
+	// testQueryParserListener()
+	// testQueryParserVistor()
 }

@@ -6,10 +6,6 @@ options {
 
 query: queryCriterias;
 
-/*
- queryCriterias: andQueryCriteria | orQueryCriteria | bracketQueryCriteria | notQueryCriteria |
- queryCriteria;
- */
 queryCriterias:
 	queryCriterias AND? queryCriterias	# AndQueryCriterias
 	| queryCriterias OR queryCriterias	# OrQueryCriterias

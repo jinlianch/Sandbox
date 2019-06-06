@@ -18,6 +18,5 @@ kvpair: PAIR_START value;
 value: VSTRING | VNSTRING;
 //  id: ID;
 
-// item: STRING | NOQUOTE_STRING | KEY;
 item: VSTRING | VNSTRING | KEY;
 
