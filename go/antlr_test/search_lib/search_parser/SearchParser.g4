@@ -10,8 +10,9 @@ queryCriterias:
 	queryCriterias AND? queryCriterias	# AndQueryCriterias
 	| queryCriterias OR queryCriterias	# OrQueryCriterias
 	| NOT queryCriterias				# NotQueryCriterias
-	| '(' queryCriterias ')'			# BracketQueryCriterias
-	| queryCriteria						# SingleQueryCriteria;
+	| PAREN_START queryCriterias CLOSE	# BracketQueryCriterias
+	// | '(' queryCriterias ')'			# BracketQueryCriterias
+	| queryCriteria # SingleQueryCriteria;
 
 queryCriteria: fieldCriteria | headerCriteria | valueCriteria;
 
