@@ -11,11 +11,12 @@ queryCriterias:
 	| NOT queryCriterias					# NotQueryCriterias
 	| queryCriterias AND? queryCriterias	# AndQueryCriterias
 	| queryCriterias OR queryCriterias		# OrQueryCriterias
-	| '{' queryCriterias+ '}'				# OrBraceQueryCriterias
 	| queryCriteria							# SingleQueryCriteria;
+// | '{' queryCriterias* '}'				# OrBraceQueryCriterias # Not support now
 
 queryCriteria: fieldCriteria | headerCriteria | valueCriteria;
 
 headerCriteria: HEADER_START valueCriteria;
 fieldCriteria: FIELD_START valueCriteria;
-valueCriteria: FIELD | QUOTE_STRING | NOQUOTE_STRING;
+valueCriteria: QUOTE_STRING | UNQUOTE_STRING | FIELD;
+
