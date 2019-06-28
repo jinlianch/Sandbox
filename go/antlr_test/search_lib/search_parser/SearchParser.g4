@@ -30,7 +30,7 @@ fieldCriteria: FIELD_START valueCriteria;
 // unquoteText: UNQUOTE_PART UNQUOTE_PART? EXIT?;
 
 // unquoteTextPart: UNQUOTE_PART? EXIT?; unquoteText: unquoteFT | unquoteTT;
-unquoteText: (FIELD_UNQUOTE_START | UNQOTE_STRING_START) UNQUOTE_PART? EXIT?;
+unquoteText: (UNQUOTE_FIELD_START | UNQOTE_CHAR_START) UNQUOTE_PART? UNQUOTE_END?;
 
 valueCriteria:
 	QUOTE_STRING
